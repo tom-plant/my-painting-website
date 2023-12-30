@@ -1,7 +1,10 @@
 // src/App.js
 
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './components/Header';
 import PaintingGallery from './components/PaintingGallery';
+import Home from './components/Home';
 
 import './App.css';
 
@@ -22,7 +25,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Your Painting Gallery</h1>
+      <Header />
+      <h1>Estonia Painting Portfolio</h1>
       <PaintingGallery paintings={paintings} />
     </div>
   );
