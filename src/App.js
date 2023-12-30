@@ -28,19 +28,17 @@ function App() {
   ];
 
   return (
+    <Router>
     <div className="App">
-      <Router>
-        <Header />
-        <h1>Estonia Painting Portfolio</h1>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/gallery" element={<PaintingGallery paintings={paintings} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/research" element={<Research />} />
-        </Routes>
-      </Router>
+      <Header /> {/* Include the Header component outside of Routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/gallery" element={<PaintingGallery paintings={paintings} />} />
+        {/* Add routes for other pages */}
+      </Routes>
     </div>
-  );
+  </Router>
+);
 }
 
 export default App;
