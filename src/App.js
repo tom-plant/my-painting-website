@@ -1,10 +1,14 @@
 // src/App.js
 
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import PaintingGallery from './components/PaintingGallery';
 import Home from './components/Home';
+import PaintingGallery from './components/PaintingGallery';
+import About from './components/About';
+import Research from './components/Research';
+
+
 
 import './App.css';
 
@@ -25,9 +29,16 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <h1>Estonia Painting Portfolio</h1>
-      <PaintingGallery paintings={paintings} />
+      <Router>
+        <Header />
+        <h1>Estonia Painting Portfolio</h1>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<PaintingGallery paintings={paintings} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/research" element={<Research />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
