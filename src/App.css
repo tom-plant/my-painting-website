@@ -36,6 +36,7 @@ header {
   display: flex; /* Use flex layout */
   align-items: center; /* Center vertically */
   justify-content: space-between;
+  min-height: 90px; /* Set a minimum height for the header */
 }
 
 /* Style for the logo image */
@@ -46,11 +47,13 @@ header {
 
 /* Center the logo horizontally within the header */
 .header-logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  margin-left: auto; /* Push the logo to the center */
 }
 
 /* Style for the website title */
